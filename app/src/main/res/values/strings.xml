@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Fifth generation experience</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Test 5G on the next screen</string>
+
+    <string name="cancel">キャンセル</string>
+    <string name="settings">設定</string>
+    <string name="permission_message">5Gを検出するために電話の権限が必要になります。設定から権限の変更をお願い致します。</string>
+    <string name="network_type">ネットワークタイプ：</string>
+    <string name="override_network_type">ネットワークタイプ（上書き）：</string>
+    <string name="unmetered">従量制：</string>
+    <string name="downstream_bandwidth">ダウンストリーム帯域幅：</string>
+    <string name="upstream_bandwidth">アップストリーム帯域幅：</string>
+</resources>

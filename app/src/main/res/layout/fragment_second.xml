@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="jp.sacredsanctuary.fifthgenerationexperience.SecondFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SecondFragment">
+
+        <!-- ネットワークタイプ -->
+        <TextView
+            android:id="@+id/network_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:text="@string/network_type"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ネットワークタイプ："
+            />
+        <TextView
+            android:id="@+id/network_type_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="@{viewModel.networkType.networkName}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/network_type"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <!-- ネットワークタイプ（上書き） -->
+        <TextView
+            android:id="@+id/override_network_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:text="@string/override_network_type"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/network_type"
+            />
+        <TextView
+            android:id="@+id/override_network_type_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="@{viewModel.overrideNetworkType.overrideNetworkName}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/override_network_type"
+            app:layout_constraintTop_toBottomOf="@id/network_type"
+            />
+
+        <!-- 従量制 -->
+        <TextView
+            android:id="@+id/unmetered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:text="@string/unmetered"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/override_network_type"
+            />
+        <TextView
+            android:id="@+id/unmetered_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="@{viewModel.isUnmetered == true ? `YES` : `NO`}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/unmetered"
+            app:layout_constraintTop_toBottomOf="@id/override_network_type"
+            />
+
+        <!-- ダウンストリーム帯域幅 -->
+        <TextView
+            android:id="@+id/downstream_bandwidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:text="@string/downstream_bandwidth"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unmetered"
+            />
+        <TextView
+            android:id="@+id/downstream_bandwidth_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="@{viewModel.linkDownBandwidthKbps.toString()}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/downstream_bandwidth"
+            app:layout_constraintTop_toBottomOf="@id/unmetered"
+            />
+
+        <!-- アップストリーム帯域幅 -->
+        <TextView
+            android:id="@+id/upstream_bandwidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:text="@string/upstream_bandwidth"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downstream_bandwidth"
+            />
+        <TextView
+            android:id="@+id/upstream_bandwidth_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="@{viewModel.linkUpBandwidthKbps.toString()}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/upstream_bandwidth"
+            app:layout_constraintTop_toBottomOf="@id/downstream_bandwidth"
+            />
+
+        <Button
+            android:id="@+id/button_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/previous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.80"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
